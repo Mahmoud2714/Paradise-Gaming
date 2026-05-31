@@ -1,0 +1,829 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+/* --- Container --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   HEADER & NAVIGATION
+   Using: Flexbox (from css fb.pdf)
+   ============================================ */
+
+header {
+    background-color: #001273;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid #C3A058;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #C3A058;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #001273;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #C3A058;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo-text span {
+    color: #FFFFFF;
+}
+
+/* --- Navigation --- */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #C3A058;
+    color: #001273;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+    background: linear-gradient(135deg, #001273 0%, #000000 100%);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(195, 160, 88, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(195, 160, 88, 0.1) 0%, transparent 50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #C3A058;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero .subtitle {
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.hero .tagline {
+    font-size: 20px;
+    color: #C3A058;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #C3A058;
+    color: #001273;
+}
+
+.btn-primary:hover {
+    background-color: #FFFFFF;
+    color: #001273;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(195, 160, 88, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #C3A058;
+    border: 2px solid #C3A058;
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: #C3A058;
+    color: #001273;
+}
+
+/* ============================================
+   SECTIONS COMMON STYLES
+   ============================================ */
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    color: #C3A058;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #C3A058;
+    margin: 15px auto 0;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+.about-section {
+    background-color: #000000;
+}
+
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h3 {
+    font-size: 28px;
+    color: #C3A058;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.about-placeholder {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    background: linear-gradient(135deg, #001273 0%, #000000 100%);
+    border: 3px solid #C3A058;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px;
+    color: #C3A058;
+}
+
+/* ============================================
+   INFO CARDS - Using CSS Grid
+   ============================================ */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.info-card {
+    background-color: #001273;
+    border: 2px solid #C3A058;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(195, 160, 88, 0.2);
+}
+
+.info-card .icon {
+    font-size: 48px;
+    color: #C3A058;
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-size: 22px;
+    color: #C3A058;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    font-size: 15px;
+    color: #FFFFFF;
+    line-height: 1.8;
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+
+.contact-section {
+    background-color: #001273;
+    padding: 80px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid #C3A058;
+}
+
+.contact-item .icon {
+    font-size: 40px;
+    color: #C3A058;
+    margin-bottom: 15px;
+}
+
+.contact-item h3 {
+    font-size: 20px;
+    color: #C3A058;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+/* ============================================
+   LOCATION SECTION
+   ============================================ */
+
+.location-section {
+    background-color: #000000;
+    padding: 80px 0;
+}
+
+.location-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.location-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.location-info h3 {
+    font-size: 24px;
+    color: #C3A058;
+    margin-bottom: 20px;
+}
+
+.location-info p {
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.location-info p::before {
+    content: "📍";
+    position: absolute;
+    left: 0;
+}
+
+.location-map {
+    flex: 1;
+    min-width: 300px;
+    height: 350px;
+    background-color: #001273;
+    border: 2px solid #C3A058;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #C3A058;
+}
+
+/* ============================================
+   GAMES SECTION
+   ============================================ */
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.game-card {
+    background-color: #001273;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #C3A058;
+    transition: all 0.3s ease;
+}
+
+.game-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(195, 160, 88, 0.2);
+}
+
+.game-image {
+    height: 200px;
+    background: linear-gradient(135deg, #001273 0%, #000000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: #C3A058;
+}
+
+.game-info {
+    padding: 25px;
+}
+
+.game-info h3 {
+    font-size: 22px;
+    color: #C3A058;
+    margin-bottom: 10px;
+}
+
+.game-info p {
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.game-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #C3A058;
+    color: #001273;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* ============================================
+   EVENTS SECTION
+   ============================================ */
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.event-item {
+    display: flex;
+    gap: 30px;
+    background-color: #001273;
+    border: 2px solid #C3A058;
+    border-radius: 12px;
+    padding: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.event-date {
+    min-width: 100px;
+    text-align: center;
+    padding: 20px;
+    background-color: #C3A058;
+    border-radius: 10px;
+    color: #001273;
+}
+
+.event-date .day {
+    font-size: 36px;
+    font-weight: bold;
+    display: block;
+}
+
+.event-date .month {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.event-details {
+    flex: 1;
+    min-width: 250px;
+}
+
+.event-details h3 {
+    font-size: 24px;
+    color: #C3A058;
+    margin-bottom: 10px;
+}
+
+.event-details p {
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+}
+
+/* ============================================
+   NEWS SECTION
+   ============================================ */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    background-color: #001273;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #C3A058;
+}
+
+.news-image {
+    height: 200px;
+    background: linear-gradient(135deg, #001273 0%, #000000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #C3A058;
+}
+
+.news-content {
+    padding: 25px;
+}
+
+.news-content .date {
+    font-size: 14px;
+    color: #C3A058;
+    margin-bottom: 10px;
+}
+
+.news-content h3 {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.news-content p {
+    font-size: 15px;
+    color: #FFFFFF;
+    line-height: 1.7;
+}
+
+/* ============================================
+   POINTS SECTION
+   ============================================ */
+
+.points-section {
+    background-color: #001273;
+}
+
+.points-display {
+    text-align: center;
+    padding: 60px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    border: 3px solid #C3A058;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.points-display .points-icon {
+    font-size: 80px;
+    color: #C3A058;
+    margin-bottom: 20px;
+}
+
+.points-display h2 {
+    font-size: 28px;
+    color: #C3A058;
+    margin-bottom: 15px;
+}
+
+.points-display .points-number {
+    font-size: 72px;
+    font-weight: bold;
+    color: #C3A058;
+    text-shadow: 0 0 20px rgba(195, 160, 88, 0.5);
+}
+
+.points-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.points-info-item {
+    text-align: center;
+    padding: 30px;
+    background-color: #000000;
+    border-radius: 12px;
+    border: 1px solid #C3A058;
+}
+
+.points-info-item h3 {
+    color: #C3A058;
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   HOW IT WORKS SECTION
+   ============================================ */
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 40px 30px;
+    background-color: #001273;
+    border-radius: 15px;
+    border: 2px solid #C3A058;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: #C3A058;
+    color: #001273;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    font-size: 22px;
+    color: #C3A058;
+    margin-bottom: 15px;
+}
+
+.step p {
+    font-size: 15px;
+    color: #FFFFFF;
+    line-height: 1.7;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background-color: #001273;
+    border-top: 3px solid #C3A058;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    color: #C3A058;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    line-height: 2;
+    display: block;
+}
+
+.footer-section a:hover {
+    color: #C3A058;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #C3A058;
+    font-size: 14px;
+    color: #C3A058;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   Using: Media Queries
+   ============================================ */
+
+@media screen and (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    nav ul {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .hero .subtitle {
+        font-size: 18px;
+    }
+    
+    .about-content,
+    .location-content {
+        flex-direction: column;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .btn-secondary {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    .event-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .steps-container {
+        flex-direction: column;
+    }
+    
+    .points-display .points-number {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .hero {
+        padding: 60px 0;
+    }
+    
+    .hero h1 {
+        font-size: 24px;
+    }
+    
+    .section {
+        padding: 50px 0;
+    }
+    
+    .info-grid,
+    .games-grid,
+    .news-grid,
+    .contact-grid,
+    .points-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-center {
+    text-align: center;
+}
+
+.text-gold {
+    color: #C3A058;
+}
+
+.bg-dark-blue {
+    background-color: #001273;
+}
+
+.bg-black {
+    background-color: #000000;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
