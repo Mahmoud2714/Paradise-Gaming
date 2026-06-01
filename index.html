@@ -8,6 +8,13 @@
     <meta name="author" content="Paradise Gaming">
     <title>Paradise Gaming - أول صالة ألعاب إلكترونية في ليبيا</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="icon" href="assets/logo.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@100..800&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -16,19 +23,19 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon">PG</div>
+                    <img src="./assets/logo.ico" alt="Paradise Gaming Logo" class="logo-img">
                     <div class="logo-text">Paradise <span>Gaming</span></div>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="index.html" class="active">الرئيسية</a></li>
-                        <li><a href="how-it-works.html">كيف يعمل</a></li>
                         <li><a href="games.html">الألعاب</a></li>
                         <li><a href="events.html">الفعاليات</a></li>
                         <li><a href="news.html">الأخبار</a></li>
                         <li><a href="points.html">النقاط</a></li>
                     </ul>
                 </nav>
+                <button id="themeToggleBtn" type="button">الوضع الفاتح</button>
             </div>
         </div>
     </header>
@@ -39,7 +46,7 @@
             <div class="hero-content">
                 <h1>Paradise Gaming</h1>
                 <p class="subtitle">أول صالة ألعاب إلكترونية في ليبيا</p>
-                <p class="tagline">تأسيس 2022.4.9 - حيث تلتقي المتعة بالاحترافية</p>
+                <p class="tagline">مُنذ 2022 - حيث تلتقي المتعة بالاحترافية</p>
                 <div class="mt-20">
                     <a href="games.html" class="btn btn-primary">استكشف الألعاب</a>
                     <a href="about.html" class="btn btn-secondary">اعرف المزيد</a>
@@ -98,7 +105,7 @@
                     <p>اكسب النقاط مع كل زيارة واستبدلها بساعات لعب مجانية أو هدايا حصرية</p>
                 </div>
                  <div class="info-card">
-                    <div class="icon"><img src="./assets/2.jpg" alt=""></div>
+                    <div class="icon"><img src="./assets/community.jpg" alt=""></div>
                     <h3>مجتمع نشط</h3>
                     <p>انضم إلى مجتمع من اللاعبين المتحمسين وتبادل الخبرات والتجارب</p>
                 </div>
@@ -129,7 +136,7 @@
     <!-- ===== CONTACT SECTION ===== -->
     <section class="contact-section">
         <div class="container">
-            <h2 class="section-title">تواصل معنا</h2>
+            <h2 class="section-title" style="text-shadow: 0 0 20px rgba(195, 160, 88, 0.9); border: 1px solid #C3A058; background-color: rgba(0, 0, 0, 0.7); padding: 10px; border-radius: 10px; backdrop-filter: blur(5px);">تواصل معنا</h2>
             <div class="contact-grid">
                 <div class="contact-item">
                     <div class="icon">📱</div>
@@ -148,11 +155,6 @@
                     <h3>وسائل التواصل</h3>
                     <p>Facebook: ParadiseGamingLY</p>
                     <p>Instagram: @paradisegaming.ly</p>
-                </div>
-                <div class="contact-item">
-                    <div class="icon">🌐</div>
-                    <h3>الموقع الإلكتروني</h3>
-                    <p>www.paradisegaming.ly</p>
                 </div>
             </div>
         </div>
@@ -192,5 +194,15 @@
         </div>
     </footer>
 
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            themeToggleBtn.textContent = document.body.classList.contains('light-mode') ? 'الوضع الداكن' : 'الوضع الفاتح';
+        }
+        
+        themeToggleBtn.addEventListener('click', toggleTheme);
+    </script>
 </body>
 </html>

@@ -4,8 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paradise Gaming - الفعاليات والبطولات في صالة الألعاب الإلكترونية في ليبيا">
+    <meta name="keywords" content="ألعاب إلكترونية, صالة ألعاب, ليبيا, Paradise Gaming, فعاليات, بطولات">
+    <meta name="author" content="Paradise Gaming">
     <title>الفعاليات - Paradise Gaming</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="icon" href="assets/logo.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@100..800&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,19 +22,19 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon">PG</div>
+                    <img src="./assets/logo.ico" alt="Paradise Gaming Logo" class="logo-img">
                     <div class="logo-text">Paradise <span>Gaming</span></div>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="how-it-works.html">كيف يعمل</a></li>
                         <li><a href="games.html">الألعاب</a></li>
                         <li><a href="events.html" class="active">الفعاليات</a></li>
                         <li><a href="news.html">الأخبار</a></li>
                         <li><a href="points.html">النقاط</a></li>
                     </ul>
                 </nav>
+                <button id="themeToggleBtn" type="button">الوضع الفاتح</button>
             </div>
         </div>
     </header>
@@ -132,5 +141,15 @@
         </div>
     </footer>
 
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            themeToggleBtn.textContent = document.body.classList.contains('light-mode') ? 'الوضع الداكن' : 'الوضع الفاتح';
+        }
+        
+        themeToggleBtn.addEventListener('click', toggleTheme);
+    </script>
 </body>
 </html>

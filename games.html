@@ -4,8 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paradise Gaming - أفضل الألعاب الإلكترونية في ليبيا">
+    <meta name="keywords" content="ألعاب إلكترونية, صالة ألعاب, ليبيا, Paradise Gaming, ألعاب">
+    <meta name="author" content="Paradise Gaming">
     <title>الألعاب - Paradise Gaming</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="icon" href="assets/logo.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@100..800&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,19 +22,19 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon">PG</div>
+                    <img src="./assets/logo.ico" alt="Paradise Gaming Logo" class="logo-img">
                     <div class="logo-text">Paradise <span>Gaming</span></div>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="how-it-works.html">كيف يعمل</a></li>
                         <li><a href="games.html" class="active">الألعاب</a></li>
                         <li><a href="events.html">الفعاليات</a></li>
                         <li><a href="news.html">الأخبار</a></li>
                         <li><a href="points.html">النقاط</a></li>
                     </ul>
                 </nav>
+                <button id="themeToggleBtn" type="button">الوضع الفاتح</button>
             </div>
         </div>
     </header>
@@ -42,9 +51,16 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title">ألعابنا</h2>
-            <div class="games-grid">
+            <div class="games-actions">
+                <div class="search-box">
+                    <label for="gameSearch">بحث عن لعبة</label>
+                    <input id="gameSearch" type="search" placeholder="اكتب اسم اللعبة...">
+                </div>
+            </div>
+
+            <div id="gamesGrid" class="games-grid">
                 <div class="game-card">
-                    <div class="game-image"><img src="./assets/games-pics/LOL.jpg" alt=""></div>
+                    <div class="game-image"><img src="./assets/games-pics/LOL.jpg" alt="League of Legends"></div>
                     <div class="game-info">
                         <h3>League of Legends</h3>
                         <p>لعبة استراتيجية جماعية من أشهر ألعاب العالم</p>
@@ -52,7 +68,7 @@
                     </div>
                 </div>
                 <div class="game-card">
-                    <div class="game-image"><img src="./assets/games-pics/Valorant.jpg" alt=""></div>
+                    <div class="game-image"><img src="./assets/games-pics/Valorant.jpg" alt="Valorant"></div>
                     <div class="game-info">
                         <h3>Valorant</h3>
                         <p>لعبة تصويب تكتيكية من شركة Riot Games</p>
@@ -60,7 +76,7 @@
                     </div>
                 </div>
                 <div class="game-card">
-                    <div class="game-image"><img src="./assets/games-pics/FC26.jpg" alt=""></div>
+                    <div class="game-image"><img src="./assets/games-pics/FC26.jpg" alt="FC 2026"></div>
                     <div class="game-info">
                         <h3>FC 2026</h3>
                         <p>أحدث إصدار من سلسلة ألعاب كرة القدم الشهيرة</p>
@@ -68,7 +84,7 @@
                     </div>
                 </div>
                 <div class="game-card">
-                    <div class="game-image"><img src="./assets/games-pics/Fortnite.jpg" alt=""></div>
+                    <div class="game-image"><img src="./assets/games-pics/Fortnite.jpg" alt="Fortnite"></div>
                     <div class="game-info">
                         <h3>Fortnite</h3>
                         <p>لعبة باتل رويال شهيرة بأسلوب بناء فريد</p>
@@ -76,7 +92,7 @@
                     </div>
                 </div>
                 <div class="game-card">
-                    <div class="game-image"><img src="./assets/games-pics/cs2.jpg" alt=""></div>
+                    <div class="game-image"><img src="./assets/games-pics/cs2.jpg" alt="Counter-Strike 2"></div>
                     <div class="game-info">
                         <h3>Counter-Strike 2</h3>
                         <p>الإصدار الجديد من لعبة التصويب الكلاسيكية</p>
@@ -84,13 +100,27 @@
                     </div>
                 </div>
                 <div class="game-card">
-                    <div class="game-image"><img src="./assets/games-pics/PUBG.jpg" alt=""></div>
+                    <div class="game-image"><img src="./assets/games-pics/PUBG.jpg" alt="PUBG"></div>
                     <div class="game-info">
                         <h3>PUBG</h3>
                         <p>لعبة باتل رويال واقعية من منظور الشخص الأول</p>
                         <span class="game-tag">Battle Royale</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: #001273;">
+        <div class="container">
+            <h2 class="section-title">إضافة لعبة جديدة</h2>
+            <div class="game-form">
+                <div class="form-grid">
+                    <input id="newGameName" type="text" placeholder="اسم اللعبة">
+                    <input id="newGameGenre" type="text" placeholder="نوع اللعبة">
+                </div>
+                <textarea id="newGameDescription" rows="3" placeholder="وصف اللعبة"></textarea>
+                <button id="addGameBtn" class="btn btn-primary" type="button">أضف اللعبة</button>
             </div>
         </div>
     </section>
@@ -128,5 +158,85 @@
         </div>
     </footer>
 
+    <script>
+        const gamesGrid = document.getElementById('gamesGrid');
+        const searchInput = document.getElementById('gameSearch');
+        const addGameBtn = document.getElementById('addGameBtn');
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+
+        function createRemoveButton(card) {
+            const actionWrapper = document.createElement('div');
+            actionWrapper.className = 'game-actions';
+            const removeBtn = document.createElement('button');
+            removeBtn.className = 'remove-game-btn';
+            removeBtn.type = 'button';
+            removeBtn.textContent = 'حذف';
+            removeBtn.addEventListener('click', () => card.remove());
+            actionWrapper.appendChild(removeBtn);
+            card.appendChild(actionWrapper);
+        }
+
+        function normalizeText(text) {
+            return text.trim().toLowerCase();
+        }
+
+        function filterGames() {
+            const query = normalizeText(searchInput.value);
+            document.querySelectorAll('.game-card').forEach(card => {
+                const title = normalizeText(card.querySelector('h3').textContent);
+                card.style.display = title.includes(query) ? '' : 'none';
+            });
+        }
+
+        function addGame() {
+            const nameField = document.getElementById('newGameName');
+            const genreField = document.getElementById('newGameGenre');
+            const descField = document.getElementById('newGameDescription');
+
+            const name = nameField.value.trim();
+            const genre = genreField.value.trim() || 'عام';
+            const description = descField.value.trim() || 'إضافة لعبة جديدة إلى القائمة.';
+
+            if (!name) {
+                alert('الرجاء إدخال اسم اللعبة.');
+                return;
+            }
+
+            const card = document.createElement('div');
+            card.className = 'game-card';
+            card.innerHTML = `
+                <div class="game-info">
+                    <h3>${name}</h3>
+                    <p>${description}</p>
+                    <span class="game-tag">${genre}</span>
+                </div>
+            `;
+
+            createRemoveButton(card);
+            gamesGrid.appendChild(card);
+            nameField.value = '';
+            genreField.value = '';
+            descField.value = '';
+            searchInput.value = '';
+            filterGames();
+        }
+
+        function initRemoveButtons() {
+            document.querySelectorAll('.game-card').forEach(card => {
+                createRemoveButton(card);
+            });
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            themeToggleBtn.textContent = document.body.classList.contains('light-mode') ? 'الوضع الداكن' : 'الوضع الفاتح';
+        }
+
+        searchInput.addEventListener('input', filterGames);
+        addGameBtn.addEventListener('click', addGame);
+        themeToggleBtn.addEventListener('click', toggleTheme);
+
+        initRemoveButtons();
+    </script>
 </body>
 </html>
